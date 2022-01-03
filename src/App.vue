@@ -3,10 +3,10 @@
     <div class="navbar">
       <Navbar />
     </div>
-  </div>
-  <router-view/>
+    <router-view/>
     <div class="footer">
-    <Footer />
+      <Footer />
+    </div>
   </div>
 </template>
 
