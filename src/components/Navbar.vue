@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <nav class="navbar">
+            <nav class="navbar" v-bind:style="$route.path === '/blogs' ? 'background-color: #c4c4c4;height: 2rem;' : '' ">
                 <div class="logo">
                     <h1>RoBlog</h1>
                 </div>
@@ -58,20 +58,21 @@ export default {
 <style>
 .navbar {
     text-align: center;
-    margin-top: -10px;
     color: #fff;
+    margin-top: -10px;
 }
 .logo {
     float: left;
     font: 1em sans-serif;
     margin-top: -1rem;
+    margin-left: 4rem;
 }
 .search{
     float: center;
     width: 30rem;
     height: 2rem;
     margin-top: -3rem;
-    margin-left: 25rem;
+    margin-left: 30rem;
     }
 .is-visually-hidden {
     position: absolute;
@@ -101,9 +102,9 @@ button {
     text-align: center;
     vertical-align: middle;
     color: #fff;
-    border: 0;
-    background-color: tomato;
-
+    border: 1;
+    background-color: #333333;
+    
 }
 button:hover{
     outline: 0;
@@ -124,12 +125,13 @@ button:active{
     margin: 0 auto;
     padding: 3rem 0 2.5rem;
     text-align: center;
+    height: 2rem;
 }
 
 
 .c-search-box__input {
     margin-bottom: 0;
-    border: 1px solid tomato;
+    border: 1px solid #2e2e2e;
     padding: 1em;
     width: 100%;
 }
@@ -144,8 +146,6 @@ button:active{
 .c-search-box__icon button:active{
     color: tomato;
 }
-
-
 
 .menu {
     display: flex;
