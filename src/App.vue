@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <div class="navbar">
+  <div class="container" v-bind:style="$route.path === '/blogs' ? 'background-color: #c4c4c4;  z-index: -1;': '' ">
+    <div class="navbar" v-bind:style="$route.path === '/blogs' ? 'background-color: #c4c4c4;height: 2rem;margin-bottom: -2rem;margin-top: 1rem;' : '' ">
       <Navbar />
     </div>
     <router-view/>
@@ -30,12 +30,13 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  margin: -1rem -1rem;
+  
 }
 .navbar {
   padding: 10px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 10px;
 }
 
 </style>
