@@ -12,16 +12,16 @@
                 <div class="link_left">
                     <h3>Blogs</h3>
                     <p>Robotics</p>
-                    <p>AI</p>
-                    <p>ML</p>
                     <p>Metaverse</p>
+                    <p>Autonomous</p>
+                    <p>Humanoid Robot</p>
                 </div>
                 <div class="link_center">
                     <h3>Articles</h3>
-                    <p>Tech</p>
-                    <p>Future Tech</p>
-                    <p>NFT</p>
-                    <p>Terms of Use</p>
+                    <p>Anthropomorphism</p>
+                    <p>Healthcare Robotics</p>
+                    <p>Google's Worker Robots</p>
+                    <p>Artificial Intelligence</p>
                 </div>
                 <div class="link_right">
                     <h3>Legal Terms</h3>
@@ -56,8 +56,9 @@ export default {
     align-items: center;
 }
 .site_logo {
+    float: left;
     font: 1em sans-serif;
-    margin-left: 20px;
+    margin-left: 5rem;
     margin-top: -5rem;
     margin-bottom: 0;
 }
@@ -73,16 +74,20 @@ export default {
 .link_left {
     margin: 0px;
     margin-right: 250px;
+    text-align: left;
 }
 .link_left p{
     font-size: .8em;
+    text-align: left;
 }
 .link_center {
     margin: 0px;
     margin-right: 250px;
+    text-align: left;
 }
 .link_center p{
     font-size: .8em;
+    text-align: left;
 }
 .link_right {
     margin: 0px;
