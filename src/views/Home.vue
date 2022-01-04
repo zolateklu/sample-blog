@@ -29,7 +29,7 @@
          </div>
        </div>
        <div class="more_blogs">
-         <button>More</button>
+         <button @click="blogsClicked">More</button>
        </div>
     </div>    
   </div>
@@ -39,7 +39,7 @@
 
 export default {
   name: 'Home',
-   data(){
+  data(){
      return {
        bg: {
           background: 'url('+require('../assets/robot.jpg')+')',
@@ -139,6 +139,11 @@ export default {
         },
         ]
      }
+   },
+   methods: {
+     blogsClicked(){
+       this.$router.push('/blogs')
+     }
    }
 }
 </script>
@@ -147,8 +152,8 @@ export default {
   font-size: 1.1rem;
   color: #fff;
   position: absolute;
-  top: 34%;
-  left: 8%;
+  top: 30%;
+  left: 16%;
   font-weight: bold;
   z-index: 1; 
 }
@@ -156,8 +161,8 @@ export default {
   font-size: 1.1rem;
   color: #fff;
   position: absolute;
-  top: 38%;
-  left: 16%;
+  top: 34%;
+  left: 21.5%;
   font-weight: bold;
   z-index: 1; 
 }
@@ -165,8 +170,8 @@ export default {
   font-size: 1.1rem;
   color: #fff;
   position: absolute;
-  top: 42%;
-  left: 22%;
+  top: 38%;
+  left: 25.5%;
   font-weight: bold;
   z-index: 1; 
 }
@@ -196,24 +201,49 @@ export default {
   float: left;
   text-align: left;
   width: 34%;
-  height: 80%;
+  height: 40%;
   margin-left: 6%;
-  margin-top: 4%;
+  margin-top: 10rem;
   font: 1.5rem 'Roboto', sans-serif;
 
 }
+.bottom{
+  width: 100%;
+  background-color: #c4c4c4;
+}
+.bottom_h3{
+    text-align: center;
+    margin-top: -2.5rem;
+    font: 2em sans-serif;
+    font-weight: bolder;
+}
 .blogs{
   display: inline-block;
-  width: 30%;
-  height: 40vh;
-  margin-left: 2%;
-  margin-top: 2%;
+  width: 22rem;
+  height: 20rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-top: 2rem;
   background-color: #666666;
   margin-bottom: 10%;
-  color: rgb(44, 44, 44)
+  background: linear-gradient(180deg, rgba(46, 45, 45, 0) 0%, #202020 100%);
+  color: rgb(255, 255,255);
+}
+.blog_img{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 80%;
+  cursor: pointer;
 }
 .blog_title{
   text-align: left;
+  margin-left: .5rem;
+}
+.more_blogs{
+  text-align: center;
+  margin-top: -5rem;
 }
 .more_blogs button{
   background-color: #666666;
@@ -223,6 +253,7 @@ export default {
   color: #fff;
   border-radius: 5px;
   margin-bottom: 10%;
+  cursor: pointer;
 
 }
 </style>
