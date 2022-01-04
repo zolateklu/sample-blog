@@ -1,6 +1,6 @@
 <template>
-  <div class="container" v-bind:style="$route.path === '/blogs' ? 'background-color: #c4c4c4;  z-index: -1;': '' ">
-    <div class="navbar" v-bind:style="$route.path === '/blogs' ? 'background-color: #c4c4c4;height: 2rem;margin-bottom: -2rem;margin-top: 1rem;' : '' ">
+  <div class="container" v-bind:style="$route.path === '/blogs'||$route.path === '/login' ? 'background-color: #c4c4c4;  z-index: -1;': '' ">
+    <div class="navbar" v-bind:style="$route.path === '/blogs' ? 'background-color: #c4c4c4;height: 2rem;margin-bottom: -2rem;margin-top: 1rem;margin-left:0rem;' : '' ">
       <Navbar />
     </div>
     <router-view/>

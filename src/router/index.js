@@ -15,6 +15,11 @@ const routes = [
     name: 'Blogs',
     component: Blogs
   },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
 ]
 
 const router = createRouter({
