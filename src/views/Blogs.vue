@@ -87,6 +87,42 @@ export default {
             height: '80%',
           },
         },
+        {
+          id: '7',
+          title: 'Robots can be friendly',
+          image: {
+            background: 'url('+require('../assets/robot5.jpg')+')',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            width: '100%',
+            height: '80%',
+          },
+        },
+        {
+          id: '8',
+          title: 'Robots & Unemployability',
+          image: {
+            background: 'url('+require('../assets/robot3.jpg')+')',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            width: '100%',
+            height: '80%',
+          },
+        },
+        {
+          id: '9',
+          title: 'Human’s human',
+          image: {
+            background: 'url('+require('../assets/robot4.jpg')+')',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            width: '100%',
+            height: '80%',
+          },
+        },
         ]
     }
   }
