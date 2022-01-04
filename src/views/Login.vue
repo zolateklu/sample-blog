@@ -15,7 +15,7 @@
                 </div>
                 <div class="login-form-link">
                     <a href="#">Forgot Password?</a>
-                    <a href="#">Create Account</a>
+                    <a href="register">Create Account</a>
                 </div>
                 <div class="login-form-button">
                     <button class="login-form-button">Login</button>
@@ -32,6 +32,7 @@ export default {
         return{
             email: '',
             password: '',
+           
         }
     }
 }

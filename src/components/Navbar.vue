@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <nav class="navbar" v-bind:style="$route.path === '/blogs' ? 'background-color: #adadad;height: 3rem;margin-right: -.6rem' : $route.path === '/login'? 'background-color: #c4c4c4;height: 3rem;margin-right:-.6rem;margin-left:-.5rem;margin-bottom:-2rem;margin-top:-.16rem': '' ">
+            <nav class="navbar" v-bind:style="$route.path === '/blogs' ? 'background-color: #adadad;height: 3rem;margin-right: -.6rem' : $route.path === '/login'? 'background-color: #c4c4c4;height: 3rem;margin-right:-.6rem;margin-left:-.5rem;margin-bottom:-2rem;margin-top:-.16rem': $route.path === '/register'? 'background-color: #c4c4c4;height: 3rem;margin-right:-.6rem;margin-left:-.5rem;margin-bottom:-2rem;margin-top:-.16rem':'' ">
                 <div class="logo">
                     <h1>RoBlog</h1>
                 </div>
