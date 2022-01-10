@@ -2,7 +2,7 @@
     <div class="footer">
         <div class="footer-content">
             <div class="site_logo">
-                <h1>RoBlog</h1>
+                <h1 @click="home">RoBlog</h1>
                 <p class="logo_name">
                     <span>RoBlog</span><br>
                     <span>2021</span>
@@ -38,7 +38,12 @@
 
 <script>
 export default {
-    name: 'Footer'
+    name: 'Footer',
+    methods:{
+        home() {
+            this.$router.push('/#top')
+        },
+    }
 
 }
 </script>
@@ -61,6 +66,7 @@ export default {
     margin-left: 5rem;
     margin-top: -5rem;
     margin-bottom: 0;
+    cursor: pointer;
 }
 .logo_name {
     margin-top: -1rem;
