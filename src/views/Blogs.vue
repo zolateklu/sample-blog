@@ -136,8 +136,8 @@ export default {
   justify-content: space-around;
   align-items: left;
   background-color: #C4C4C4;
-  opacity: .9;
   margin-top: 4rem;
+  z-index: -1;
 }
 .blogs-posted {
   display: inline-block;

@@ -49,7 +49,7 @@ export default {
           height: '80vh',
           width: '100%',
           position: 'relative',
-          top: '-4.5rem',
+          top: '-2rem',
           margin: '0',
           zIndex: '-1'
         },
@@ -59,10 +59,10 @@ export default {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           height: '75vh',
-          width: '70vh',
-          position: 'absolute',
+          width: '65vh',
           top: '87%',
-          left: '50%',
+          marginTop: '4rem',
+          marginLeft: '50%'
         },
         blogs: [
           {

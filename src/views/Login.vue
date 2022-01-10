@@ -47,6 +47,7 @@ export default {
     align-items: center;
     background-color: #D9D9D9;
     opacity: .9;
+    margin-top: 3.1rem;
 }
 .login-form{
     width: 24rem;

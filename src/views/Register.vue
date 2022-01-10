@@ -63,21 +63,24 @@ export default {
 <style>
 .register-container {
     width: 100%;
-    height: 31.15rem;
+    height: 31.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #D9D9D9;
     opacity: .9;
+    margin-top: 3.4rem;
 }
 .register-form{
     width: 30rem;
-    height: 100%;
+    height: 29rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #CBCBCB;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 .form-group{
     width: 100%;

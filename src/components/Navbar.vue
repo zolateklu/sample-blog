@@ -1,7 +1,6 @@
 <template>
     <div>
-        <div>
-            <nav class="navbar" v-bind:style="$route.path === '/blogs' ? 'background-color: #adadad;height: 3rem;margin-right: -.6rem' : $route.path === '/login'? 'background-color: #c4c4c4;height: 3rem;margin-right:-.6rem;margin-left:-.5rem;margin-bottom:-2rem;margin-top:-.16rem': $route.path === '/register'? 'background-color: #c4c4c4;height: 3rem;margin-right:-.6rem;margin-left:-.5rem;margin-bottom:-2rem;margin-top:-.16rem':'' ">
+        <nav :class="{change_color: scrollPosition > 50}" class="navbar" v-bind:style="$route.path === '/blogs' ? 'background-color: #adadad;height: 3rem;margin-right: -.6rem' : $route.path === '/login'? 'background-color: #c4c4c4;height: 3rem;margin-right:-.6rem;margin-left:-.5rem;margin-bottom:-2rem;margin-top:-.16rem': $route.path === '/register'? 'background-color: #c4c4c4;height: 3rem;margin-right:-.6rem;margin-left:-.5rem;margin-bottom:-2rem;margin-top:-.16rem': $route.path ==='/'? 'margin-top:-.2rem;margin-right:-.5rem': '' ">
                 <div class="logo">
                     <h1>RoBlog</h1>
                 </div>
@@ -34,14 +33,20 @@
                 </div>
             </nav>
         </div>
-    </div>
 
 </template>
 
 <script>
 export default {
     name: 'Navbar',
+    data(){
+        return{
+            scrollPosition: 0,
+        }},
     methods: {
+        updateScroll(){
+            this.scrollPosition = window.scrollY
+            },
         home() {
             this.$router.push('/')
         },
@@ -51,11 +56,27 @@ export default {
         login() {
             this.$router.push('/login')
         }
-    }
+    },
+    mounted(){
+            window.addEventListener('scroll', this.updateScroll)
+        },
 }
 </script>
 
 <style>
+nav {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: .9;
+    position: fixed;
+}
+.change_color {
+       background-color: lightgrey;
+       opacity: 1;
+   }
 .navbar {
     text-align: center;
     color: #fff;
@@ -71,8 +92,8 @@ export default {
     float: center;
     width: 30rem;
     height: 2rem;
-    margin-top: -3rem;
-    margin-left: 30rem;
+    margin-top: -6.7rem;
+    margin-left: 23rem;
     }
 .is-visually-hidden {
     position: absolute;

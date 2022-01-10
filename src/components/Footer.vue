@@ -98,7 +98,7 @@ export default {
 }
 .footer-bottom {
     font-size: 0.8em;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 </style>
