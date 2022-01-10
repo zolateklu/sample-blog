@@ -1,8 +1,8 @@
 <template>
     <div>
-        <nav :class="{change_color: scrollPosition > 50}" class="navbar" v-bind:style="$route.path === '/blogs' ? 'background-color: #adadad;height: 3rem;margin-right: -.6rem' : $route.path === '/login'? 'background-color: #c4c4c4;height: 3rem;margin-right:-.6rem;margin-left:-.5rem;margin-bottom:-2rem;margin-top:-.16rem': $route.path === '/register'? 'background-color: #c4c4c4;height: 3rem;margin-right:-.6rem;margin-left:-.5rem;margin-bottom:-2rem;margin-top:-.16rem': $route.path ==='/'? 'margin-top:-.2rem;margin-right:-.5rem': '' ">
+        <nav :class="{change_color: scrollPosition > 50}" class="navbar" v-bind:style="$route.path === '/blogs' ? 'background-color: #adadad;height: 3rem;margin-right: -.6rem' : $route.path === '/login'? 'background-color: #c4c4c4;height: 3rem;margin-right:-.6rem;margin-left:-.5rem;margin-bottom:-2rem;margin-top:-.16rem': $route.path === '/register'? 'background-color: #c4c4c4;height: 3rem;margin-right:-.6rem;margin-left:-.5rem;margin-bottom:-2rem;margin-top:-.16rem': $route.path ==='/'? 'margin-top:-.2rem;margin-right:-.5rem': $route.path === '/posts'? 'background-color: #c4c4c4': '' ">
                 <div class="logo">
-                    <h1>RoBlog</h1>
+                    <h1 @click="home">RoBlog</h1>
                 </div>
                 <div v-if="$route.path === '/blogs'" class="search">
                     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -27,9 +27,10 @@
                     </div>
                 </div>
                 <div class="menu">
-                    <button @click="home">Home</button>
-                    <button @click="blogs">Blogs</button>
-                    <button @click="login">Login</button>
+                    <button class="btn-1" @click="home">Home</button>
+                    <button class="btn-2" @click="blogs">Blogs</button>
+                    <button :class="{hide_login: $route.path ==='/posts'} " class="btn-3"  @click="login">Login</button>
+                    <button :class="{hide_userName: $route.path !== '/posts'} " class="btn-4" >ZT</button>
                 </div>
             </nav>
         </div>
@@ -87,6 +88,13 @@ nav {
     font: 1em sans-serif;
     margin-top: -1rem;
     margin-left: 4rem;
+    cursor: pointer;
+}
+.hide_login{
+    display: none;
+}
+.hide_userName{
+    display: none
 }
 .search{
     float: center;
