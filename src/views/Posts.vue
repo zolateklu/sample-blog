@@ -6,7 +6,7 @@
                     <h3>Title</h3>
                 </div>
                 <div class="post-content-title-input">
-                    <input type="text" placeholder="Write the title of the blog">
+                    <input type="text" placeholder="Write the title of the blog" v-model="title">
                 </div>
             </div>
              <div class="post-content-body">
@@ -14,14 +14,14 @@
                     <h3>Body</h3>
                 </div>
                 <div class="post-content-body-textarea">
-                    <textarea></textarea>
+                    <textarea v-model="body"></textarea>
                 </div>
             </div>
             <div class="post-image">
                 <input type="file" name="image" id="image" @change="onFileChange">
             </div>
             <div class="post-button">
-                <button class="post-button-button">Post</button>
+                <button class="post-button-button" @click="blogPost">Post</button>
             </div>
         </div>
     </div>
@@ -33,6 +33,9 @@ export default {
     data() {
         return {
             post: {},
+            title: '',
+            body: '',
+            image: '',
         }
     },
     methods: {
@@ -40,6 +43,19 @@ export default {
             const file = e.target.files[0]
             this.post.image = file
         },
+        blogPost() {
+            fetch('http://localhost:8000/api/post/postBlog', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    title: this.title,
+                    body: this.body,
+                    image: this.image,
+                })
+            })
+        }
     }
 }
 </script>

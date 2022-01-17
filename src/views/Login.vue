@@ -7,18 +7,18 @@
             <div class="login-form-body">
                 <div class="login-form-input">
                     <label for="email" style="margin-right:2.5rem">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Email">
+                    <input type="email" id="email" name="email" placeholder="Email" v-model="email">
                 </div>
                 <div class="login-form-input">
                     <label for="password" style="margin-right:1rem">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Password">
+                    <input type="password" id="password" name="password" placeholder="Password" v-model="password">
                 </div>
                 <div class="login-form-link">
                     <a href="#">Forgot Password?</a>
                     <a href="register">Create Account</a>
                 </div>
                 <div class="login-form-button">
-                    <button class="login-form-button">Login</button>
+                    <button class="login-form-button" @click="login">Login</button>
                 </div>
             </div>
         </div>
@@ -29,11 +29,32 @@
 export default {
     name: 'Login',
     data(){
-        return{
+        return {
             email: '',
-            password: '',
-           
+            password: ''
         }
+    },
+    methods:{
+        login(){
+            fetch('http://localhost:8000/api/user/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: this.email,
+                    password: this.password
+                })
+
+            })
+            .then(response => response.json())
+            .then(res => {
+                this.$router.push('/posts')
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        },
     }
 }
 </script>
