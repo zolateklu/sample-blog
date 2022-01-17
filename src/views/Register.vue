@@ -46,14 +46,21 @@ export default {
     },
     methods: {
         register() {
-            this.$http.post('/api/register', {
-                fname: this.fname,
-                lname: this.lname,
-                email: this.email,
-                password: this.password,
-                password_confirmation: this.password_confirmation
+            fetch('http://localhost:8000/api/user/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    fname: this.fname,
+                    lname: this.lname,
+                    email: this.email,
+                    password: this.password,
+                    })
             }).then(response => {
-                this.$router.push('/login')
+                if(response.status === 200){
+                    this.$router.push('/posts')
+                }
             })
         },
     }
